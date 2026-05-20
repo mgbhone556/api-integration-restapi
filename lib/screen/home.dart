@@ -35,30 +35,32 @@ class Home extends StatelessWidget {
   }
 
   Widget item(CountryModel country, context) {
-    return ListTile(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => DetailScreen(
-              country_name: country.name.common,
-              apiService: apiService,
+    return Card(
+      child: ListTile(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(
+                country_name: country.name.common,
+                apiService: apiService,
+              ),
             ),
-          ),
-        );
-      },
-      leading: CachedNetworkImage(
-        imageUrl: "https://flagsapi.com/${country.cca2}/shiny/64.png",
-        width: 50,
-        height: 50,
-        placeholder: (context, url) =>
-            Center(child: CircularProgressIndicator()),
-        errorWidget: (context, url, error) => Icon(Icons.error),
-      ),
+          );
+        },
+        leading: CachedNetworkImage(
+          imageUrl: "https://flagsapi.com/${country.cca2}/shiny/64.png",
+          width: 50,
+          height: 50,
+          placeholder: (context, url) =>
+              Center(child: CircularProgressIndicator()),
+          errorWidget: (context, url, error) => Icon(Icons.error),
+        ),
 
-      title: Text(country.name.common),
-      subtitle: Text(
-        country.capital.isNotEmpty ? country.capital[0] : 'No Capital',
+        title: Text(country.name.common),
+        subtitle: Text(
+          country.capital.isNotEmpty ? country.capital[0] : 'No Capital',
+        ),
       ),
     );
   }

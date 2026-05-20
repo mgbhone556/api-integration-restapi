@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:restapi_integration/api/api_service.dart';
-import 'package:dio/dio.dart';
 import 'package:restapi_integration/screen/home.dart';
 
 void main() {
