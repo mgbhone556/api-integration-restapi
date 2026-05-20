@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:restapi_integration/api/api_service.dart';
-import 'package:dio/dio.dart';
 import 'package:restapi_integration/model/country_model.dart';
 import 'package:restapi_integration/screen/detail_screen.dart';
 import 'package:get/get.dart';
@@ -39,15 +38,7 @@ class Home extends StatelessWidget {
     return Card(
       child: ListTile(
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(
-                country_name: country.name.common,
-                apiService: apiService,
-              ),
-            ),
-          );
+          Get.to(DetailScreen(country_name: country.name.common));
         },
         leading: CachedNetworkImage(
           imageUrl: "https://flagsapi.com/${country.cca2}/shiny/64.png",

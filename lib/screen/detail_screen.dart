@@ -9,11 +9,7 @@ class DetailScreen extends StatelessWidget {
   final ApiService apiService = Get.find();
   final String country_name;
 
-  const DetailScreen({
-    super.key,
-    required this.country_name,
-    required this.apiService,
-  });
+  DetailScreen({super.key, required this.country_name});
 
   @override
   Widget build(BuildContext context) {
