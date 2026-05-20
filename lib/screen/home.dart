@@ -38,7 +38,7 @@ class Home extends StatelessWidget {
     return Card(
       child: ListTile(
         onTap: () {
-          Get.to(DetailScreen(country_name: country.name.common));
+          Get.to(() => DetailScreen(country_name: country.name.common));
         },
         leading: CachedNetworkImage(
           imageUrl: "https://flagsapi.com/${country.cca2}/shiny/64.png",
