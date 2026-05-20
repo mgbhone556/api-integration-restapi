@@ -15,7 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Dio dio = Dio();
-    dio.interceptors.add(LogInterceptor(logPrint: (object) => print(object)));
+    dio.interceptors.add(
+      LogInterceptor(
+        logPrint: (object) => print(object),
+        responseBody: true,
+        requestBody: true,
+      ),
+    );
     ApiService apiService = ApiService(dio);
     Get.put(apiService);
     return GetMaterialApp(home: Home());
