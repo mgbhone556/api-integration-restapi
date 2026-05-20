@@ -4,9 +4,10 @@ import 'package:restapi_integration/api/api_service.dart';
 import 'package:dio/dio.dart';
 import 'package:restapi_integration/model/country_model.dart';
 import 'package:restapi_integration/screen/detail_screen.dart';
+import 'package:get/get.dart';
 
 class Home extends StatelessWidget {
-  ApiService apiService = ApiService(Dio());
+  ApiService apiService = Get.find();
   Home({super.key});
 
   @override

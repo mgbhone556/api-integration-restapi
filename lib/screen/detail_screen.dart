@@ -1,10 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/get_core.dart';
 import 'package:restapi_integration/api/api_service.dart';
 import 'package:restapi_integration/model/detail.dart';
+import 'package:get/get.dart';
 
 class DetailScreen extends StatelessWidget {
-  final ApiService apiService;
+  final ApiService apiService = Get.find();
   final String country_name;
 
   const DetailScreen({
