@@ -49,9 +49,13 @@ class Home extends StatelessWidget {
           errorWidget: (context, url, error) => Icon(Icons.error),
         ),
 
-        title: Text(country.name.common),
+        title: Text(
+          country.name.common,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         subtitle: Text(
           country.capital.isNotEmpty ? country.capital[0] : 'No Capital',
+          style: TextStyle(color: Colors.grey),
         ),
       ),
     );
